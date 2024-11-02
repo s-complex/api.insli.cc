@@ -3,5 +3,9 @@ main = ".output/server/index.mjs"
 compatibility_date = "2023-05-18"
 assets = { directory = "./.output/public", binding = "ASSETS" }
 
+rules = [
+    { type = "ESModule", globs = ["**/*.js", "**/*.mjs"]},
+]
+
 [observability]
 enabled = true
