@@ -3,7 +3,7 @@ import yaml from "js-yaml";
 export default defineEventHandler(async (event) => {
   const file = yaml.load(
     await $fetch(
-      "https://raw.githubusercontent.com/s-complex/Friends/main/list.yml"
+      "https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/list.yml"
     )
   );
 
