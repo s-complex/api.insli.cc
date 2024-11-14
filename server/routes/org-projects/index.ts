@@ -8,14 +8,11 @@ export default defineEventHandler(async (event) => {
         return [];
     }
 
-    // 提取需要的数据
-    const filteredData = data.repos.map(item => {
+    return data.repos.map(item => {
         return {
             name: item.name,
             html_url: `https://github.com/${item.repo}`,
             description: item.description || ''
         };
     });
-
-    return filteredData;
 });

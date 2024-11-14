@@ -19,5 +19,8 @@ export default defineNitroConfig({
     "/photos/yecdn/**": {
       proxy: "https://i.yecdn.com/images/**",
     },
+    "/link-proxy": {
+      proxy: "https://raw.githubusercontent.com/Big-Cake-jpg/friend-links/refs/heads/main/links.json"
+    }
   },
 });

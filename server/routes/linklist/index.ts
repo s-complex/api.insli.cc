@@ -1,13 +1,20 @@
 import yaml from "js-yaml";
 
+interface Friend {
+  name: string,
+  slogan: string,
+  avatar: string,
+  link: string
+}
+
 export default defineEventHandler(async (event) => {
   const file = yaml.load(
     await $fetch(
       "https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/list.yml"
     )
-  );
+  ) as Friend[];
 
-  file.forEach((item) => {
+  file.forEach((item: { avatar: string; }) => {
     if (item.avatar) {
       item.avatar = `https://api.slirv.vip/linklist/img/${item.avatar}`;
     }
