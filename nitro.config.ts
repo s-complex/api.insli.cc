@@ -18,9 +18,6 @@ export default defineNitroConfig({
     },
     "/photos/yecdn/**": {
       proxy: "https://i.yecdn.com/images/**",
-    },
-    "/linklist/**": {
-      swr: 816300
     }
   },
 });
