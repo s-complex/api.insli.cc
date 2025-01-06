@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
 
   file.forEach((item: { avatar: string; }) => {
     if (item.avatar) {
-      item.avatar = `https://api.slirv.vip/linklist/img/${item.avatar}`;
+      item.avatar = `https://api.insli.cc/linklist/img/${item.avatar}`;
     }
   });
 
