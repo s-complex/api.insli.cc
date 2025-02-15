@@ -11,7 +11,7 @@ interface FriendsList {
 }
 
 export default defineEventHandler(async (event) => {
-  const source = await $fetch<string>('https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/new-format.yml')
+  const source = await $fetch<string>('https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/list.yml')
   const list = yaml.load(source) as FriendsList;
   Object.keys(list).forEach((key) => {
     list[key].avatar = `https://api.insli.cc/linklist/img/${list[key].avatar}`
