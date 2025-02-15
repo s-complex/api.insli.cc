@@ -1,31 +1,25 @@
-import yaml from "js-yaml";
+import yaml from 'js-yaml';
 
 interface Friend {
-  name: string,
-  slogan: string,
-  avatar: string,
-  link: string
+  slogan: string;
+  avatar: string;
+  link: string;
+}
+
+interface FriendsList {
+  [key: string]: Friend;
 }
 
 export default defineEventHandler(async (event) => {
-  const file = yaml.load(
-    await $fetch(
-      "https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/list.yml"
-    )
-  ) as Friend[];
-
-  file.forEach((item: { avatar: string; }) => {
-    if (item.avatar) {
-      item.avatar = `https://api.insli.cc/linklist/img/${item.avatar}`;
-    }
-  });
-
-  const jsonContent = JSON.stringify(file, null, 2);
-  const utf8EncodedContent = new TextEncoder().encode(jsonContent);
-
-  return new Response(utf8EncodedContent, {
+  const source = await $fetch<string>('https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/new-format.yml')
+  const list = yaml.load(source) as FriendsList;
+  Object.keys(list).forEach((key) => {
+    list[key].avatar = `https://api.insli.cc/linklist/img/${list[key].avatar}`
+  })
+  const result = JSON.stringify(list, null, 2);
+  return new Response(new TextEncoder().encode(result), {
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  });
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  })
 });
