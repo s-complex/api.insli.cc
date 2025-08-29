@@ -1,10 +1,6 @@
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
   const avatar = getRouterParam(event, "id");
   return await $fetch(
-      `https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/img/${avatar}`, {
-        headers: {
-          'Cache-Control': 'public, max-age=1209600'
-        }
-      }
+      `https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/img/${avatar}`
   );
-});
+}, { maxAge: 1209600 });

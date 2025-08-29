@@ -8,6 +8,16 @@ interface FriendsList {
   }
 }
 
+function getRandomEntries<T>(obj: Record<string, T>, count: number): Record<string, T> {
+  const entries = Object.entries(obj)
+
+  for (let i = entries.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[entries[i], entries[j]] = [entries[j], entries[i]]
+  }
+  return Object.fromEntries(entries.slice(0, count))
+}
+
 export default defineCachedEventHandler(async () => {
   const source = await $fetch<string>('https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/list.yml')
   const list = yaml.load(source) as FriendsList
@@ -19,5 +29,5 @@ export default defineCachedEventHandler(async () => {
     ])
   )
 
-  return result
-}, { maxAge: 60 * 60 })
+  return getRandomEntries(result, 5)
+}, { maxAge: 86400 })

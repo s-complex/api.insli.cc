@@ -1,18 +1,11 @@
-export default defineEventHandler(async (event) => {
-    const apiData = await $fetch("https://ungh.cc/users/s-complex/repos");
+export default defineEventHandler(async () => {
+  const { repos = [] } = await $fetch<{ repos?: { name: string; repo: string; description?: string }[] }>(
+    "https://ungh.cc/users/s-complex/repos"
+  );
 
-    const data = apiData as { repos: { name: string, repo: string, description: string }[] };
-
-    if (!data.repos || !Array.isArray(data.repos)) {
-        console.error('Invalid data structure');
-        return [];
-    }
-
-    return data.repos.map(item => {
-        return {
-            name: item.name,
-            html_url: `https://github.com/${item.repo}`,
-            description: item.description || ''
-        };
-    });
+  return repos.map(item => ({
+    name: item.name,
+    html_url: `https://github.com/${item.repo}`,
+    description: item.description || ''
+  }));
 });

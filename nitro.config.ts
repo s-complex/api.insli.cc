@@ -1,6 +1,6 @@
-// https://nitro.unjs.io/config
+// https://nitro.build/config
 export default defineNitroConfig({
-  compatibilityDate: "2024-11-01",
+  compatibilityDate: "2025-08-29",
   srcDir: "server",
   routeRules: {
     "/**": {
@@ -15,9 +15,6 @@ export default defineNitroConfig({
     },
     "/photos/alice": {
       proxy: "https://avatars.githubusercontent.com/u/81961962",
-    },
-    "/photos/yecdn/**": {
-      proxy: "https://i.yecdn.com/images/**",
     }
   },
 });
