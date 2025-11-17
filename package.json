@@ -10,11 +10,10 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "nitropack": "^2.12.7"
+    "nitropack": "^2.12.9"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "yaml": "^2.8.1"
+    "js-yaml": "^4.1.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
