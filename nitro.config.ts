@@ -15,6 +15,6 @@ export default defineNitroConfig({
     },
     "/photos/alice": {
       proxy: "https://avatars.githubusercontent.com/u/81961962",
-    }
+    },
   },
 });
