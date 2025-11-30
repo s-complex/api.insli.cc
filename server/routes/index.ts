@@ -1,3 +1,3 @@
 export default eventHandler(() => {
-  return "Here is api.insli.cc";
+	return 'Here is api.insli.cc';
 });

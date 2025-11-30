@@ -7,13 +7,13 @@
     "dev": "nitro dev",
     "prepare": "nitro prepare",
     "preview": "node .output/server/index.mjs",
-    "lint:check": "oxlint && dprint check",
-    "lint:fix": "oxlint --fix && dprint fmt"
+    "lint:check": "oxlint && oxfmt --check",
+    "lint:fix": "oxlint --fix && oxfmt"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "dprint": "^0.50.2",
     "nitropack": "^2.12.9",
+    "oxfmt": "^0.15.0",
     "oxlint": "^1.29.0"
   },
   "dependencies": {
@@ -22,7 +22,6 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
-      "dprint",
       "esbuild",
       "sharp"
     ]

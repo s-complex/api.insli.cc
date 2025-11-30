@@ -1,0 +1,10 @@
+{
+	"tabWidth": 4,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": true,
+	"quoteProps": "preserve",
+	"trailingComma": "es5",
+	"bracketSpacing": true,
+	"objectWrap": "collapse"
+}
