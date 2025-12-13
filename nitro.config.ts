@@ -14,5 +14,6 @@ export default defineNitroConfig({
 			},
 		},
 		'/photos/alice': { proxy: 'https://avatars.githubusercontent.com/u/81961962' },
+		'/favicon.ico': { redirect: { to: 'https://library.gxres.net/images/icons/favicon.ico', statusCode: 302 } },
 	},
 });
