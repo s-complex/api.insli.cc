@@ -18,6 +18,9 @@ importers:
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
+      '@types/node':
+        specifier: ^25.0.3
+        version: 25.0.3
       nitro:
         specifier: 3.0.1-alpha.1
         version: 3.0.1-alpha.1(@netlify/blobs@9.1.2)(chokidar@4.0.3)(ioredis@5.8.2)(rolldown@1.0.0-beta.55)(rollup@4.53.3)
@@ -527,6 +530,9 @@ packages:
   '@types/js-yaml@4.0.9':
     resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
+  '@types/node@25.0.3':
+    resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
+
   '@whatwg-node/disposablestack@0.0.6':
     resolution: {integrity: sha512-LOtTn+JgJvX8WfBVJtF08TGrdjuFzGJc4mkP8EdDI8ADbvO7kiexYep1o8dwnt0okb0jYclCDXF13xU7Ge4zSw==}
     engines: {node: '>=18.0.0'}
@@ -909,6 +915,9 @@ packages:
 
   ufo@1.6.1:
     resolution: {integrity: sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==}
+
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
   undici@7.16.0:
     resolution: {integrity: sha512-QEg3HPMll0o3t2ourKwOeUAZ159Kn9mx5pnzHRQO8+Wixmh88YdZRiIwat0iNzNNXn0yoEtXJqFpyW7eM8BV7g==}
@@ -1334,6 +1343,10 @@ snapshots:
     optional: true
 
   '@types/js-yaml@4.0.9': {}
+
+  '@types/node@25.0.3':
+    dependencies:
+      undici-types: 7.16.0
 
   '@whatwg-node/disposablestack@0.0.6':
     dependencies:
@@ -1839,6 +1852,8 @@ snapshots:
     optional: true
 
   ufo@1.6.1: {}
+
+  undici-types@7.16.0: {}
 
   undici@7.16.0: {}
 

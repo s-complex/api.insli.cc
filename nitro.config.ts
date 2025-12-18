@@ -20,5 +20,6 @@ export default defineNitroConfig({
 		'/favicon.ico': {
 			redirect: { to: 'https://library.gxres.net/images/icons/favicon.ico', status: 302 },
 		},
+		'/linklist/img/**': { proxy: 'https://raw.githubusercontent.com/s-complex/Friends/refs/heads/main/img/**', cache: { maxAge: 1209600 } }
 	},
 });
