@@ -1,7 +1,10 @@
+import { defineNitroConfig } from 'nitro/config';
+
 // https://nitro.build/config
 export default defineNitroConfig({
 	compatibilityDate: '2025-08-29',
-	srcDir: 'server',
+	serverDir: 'server',
+	builder: 'rolldown',
 	routeRules: {
 		'/**': {
 			cors: true,
@@ -14,6 +17,8 @@ export default defineNitroConfig({
 			},
 		},
 		'/photos/alice': { proxy: 'https://avatars.githubusercontent.com/u/81961962' },
-		'/favicon.ico': { redirect: { to: 'https://library.gxres.net/images/icons/favicon.ico', statusCode: 302 } },
+		'/favicon.ico': {
+			redirect: { to: 'https://library.gxres.net/images/icons/favicon.ico', status: 302 },
+		},
 	},
 });
