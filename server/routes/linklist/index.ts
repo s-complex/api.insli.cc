@@ -16,7 +16,7 @@ export default defineCachedHandler(
 		const result = Object.fromEntries(
 			Object.entries(list).map(([key, value]) => [
 				key,
-				{ ...value, avatar: `https://api.insli.cc/linklist/img/${value.avatar}` },
+				{ ...value, avatar: `https://api.sirvr.win/linklist/img/${value.avatar}` },
 			])
 		);
 
