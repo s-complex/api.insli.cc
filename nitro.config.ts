@@ -5,7 +5,6 @@ export default defineNitroConfig({
 	compatibilityDate: '2025-08-29',
 	serverDir: 'server',
 	builder: 'rolldown',
-	preset: 'edgeone-pages',
 	routeRules: {
 		'/**': {
 			cors: true,
