@@ -2,9 +2,8 @@ import { defineNitroConfig } from 'nitro/config';
 
 // https://nitro.build/config
 export default defineNitroConfig({
-	compatibilityDate: '2025-08-29',
+	compatibilityDate: '2026-02-15',
 	serverDir: 'server',
-	builder: 'rolldown',
 	routeRules: {
 		'/**': {
 			cors: true,
