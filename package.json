@@ -1,35 +1,36 @@
 {
-  "name": "api.sirvr.win",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "build": "nitro build",
-    "dev": "nitro dev",
-    "prepare": "nitro prepare",
-    "preview": "node .output/server/index.mjs",
-    "lint:check": "oxlint && oxfmt --check",
-    "lint:fix": "oxlint --fix && oxfmt"
-  },
-  "devDependencies": {
-    "@types/js-yaml": "^4.0.9",
-    "@types/node": "^25.0.3",
-    "nitro": "3.0.1-alpha.1",
-    "oxfmt": "^0.15.0",
-    "oxlint": "^1.30.0",
-    "rolldown": "1.0.0-beta.55"
-  },
-  "dependencies": {
-    "js-yaml": "^4.1.1",
-    "ofetch": "^1.5.1"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "sharp"
-    ]
-  },
-  "lint-staged": {
-    "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,astro,svelte}": "oxlint"
-  }
+	"name": "api.sirvr.win",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nitro build",
+		"dev": "nitro dev",
+		"prepare": "nitro prepare",
+		"preview": "srvx .output/server/index.mjs",
+		"lint:check": "oxlint && oxfmt --check",
+		"lint:fix": "oxlint --fix && oxfmt"
+	},
+	"dependencies": {
+		"js-yaml": "^4.1.1",
+		"ofetch": "^1.5.1"
+	},
+	"devDependencies": {
+		"@types/js-yaml": "^4.0.9",
+		"@types/node": "^25.2.3",
+		"nitro": "3.0.1-alpha.2",
+		"oxfmt": "^0.32.0",
+		"oxlint": "^1.47.0",
+		"rolldown": "1.0.0-rc.4",
+		"srvx": "^0.11.4"
+	},
+	"lint-staged": {
+		"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,astro,svelte}": "oxlint"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild",
+			"sharp"
+		]
+	}
 }

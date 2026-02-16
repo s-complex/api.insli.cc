@@ -1,5 +1,5 @@
 # API
 
-AlO misc services provider for our websites. 
+AlO misc services provider for our websites.
 
 Framework: Nitro
