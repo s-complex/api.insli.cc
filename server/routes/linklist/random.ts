@@ -22,7 +22,7 @@ export default defineCachedHandler(
 			])
 		);
 
-		return getRandomEntries(result, 5);
+		return getRandomEntries(result, 6);
 	},
 	{ maxAge: 86400 }
 );
