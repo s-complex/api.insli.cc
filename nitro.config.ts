@@ -6,6 +6,11 @@ export default defineNitroConfig({
 	serverDir: 'server',
 	builder: 'rolldown',
 	preset: 'cloudflare-module',
+	cloudflare: {
+		wrangler: {
+			name: 'api'
+		}
+	},
 	routeRules: {
 		'/**': {
 			cors: true,
