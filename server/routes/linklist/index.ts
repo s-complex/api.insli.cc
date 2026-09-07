@@ -1,5 +1,5 @@
 import { defineCachedHandler } from 'nitro/cache';
-import { fetchLinksData } from '~/server/utils/fetchLinksData';
+import { fetchLinksData } from '../../utils/fetchLinksData';
 
 export default defineCachedHandler(
 	async () => {

@@ -1,5 +1,5 @@
 import { defineCachedHandler } from 'nitro/cache';
-import { fetchLinksData } from '~/server/utils/fetchLinksData';
+import { fetchLinksData } from '../../utils/fetchLinksData';
 
 function getRandomEntries<T>(obj: Record<string, T>, count: number): Record<string, T> {
 	const entries = Object.entries(obj);
